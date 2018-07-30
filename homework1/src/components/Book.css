@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    height: 225px;
+    width: 150px;
+}
+h1{
+    font-size: 28px;
+}
+.authorBook{
+    margin: 15px 0;
+}
+.description{
+    width: 450px;
+}
+.book_card{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: space-between;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    padding: 20px;
+    margin-bottom: 15px;
+    width: 610px;
+}
+.book_text{
+    display: flex;
+    flex-direction: column;
+}
+.button{
+    position: absolute;
+    margin-left: 435px;
+    width: 20px;
+    height: 20px;
+}
