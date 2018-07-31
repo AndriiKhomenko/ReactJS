@@ -1,84 +1,93 @@
 import React, {Component} from 'react';
-import styles from './CreateBook.css';
+import styles from './styles/create-bookStyle.css';
 
 export default class CreateBook extends Component {
 
-    state = {
-            title: '',
-            imageLink: '',
-            author: '',
-            descr: '',
-    };
+  state = {
+    title: '',
+    imageLink: '',
+    author: '',
+    descr: '',
+  };
 
-    handleSubmit = e => {
-        e.preventDefault();
+  handleSubmit = e => {
+    e.preventDefault();
 
-        const {title, imageLink, author, descr} = this.state;
+    if(this.validation()) {
 
-        if(
-            (title.trim() === '')||
-            (imageLink.trim() === '')||
-            (author.trim() === '')||
-            (descr.trim() === '')
-        ) {
-            alert('Заполните все поля!');
-            return;
-        }
+    const {title, imageLink, author, descr} = this.state;
 
-        this.props.onSubmit(title, imageLink, author, descr);
-
-        this.setState({
-            title: '',
-            imageLink: '',
-            author: '',
-            descr: '',
-        });
-    };
-
-    handleChange = e => {
+    this.props.onSubmit(title, imageLink, author, descr);
 
       this.setState({
-         [e.target.name]: e.target.value,
+        title: '',
+        imageLink: '',
+        author: '',
+        descr: '',
       });
+
+    }
     };
 
-    render(){
+  validation = () =>{
 
-        const {title, imageLink, author, descr} = this.state;
+    const {title, imageLink, author, descr} = this.state;
 
-        return (
-            <form onSubmit={this.handleSubmit}>
-                    <input
-                        type="text"
-                        name="title"
-                        placeholder="Title"
-                        value={title}
-                        onChange={this.handleChange}
-                    />
-                    <input
-                        type="text"
-                        name="imageLink"
-                        placeholder="Image Link"
-                        value={imageLink}
-                        onChange={this.handleChange}
-                    />
-                    <input
-                        type="text"
-                        name="author"
-                        placeholder="Author"
-                        value={author}
-                        onChange={this.handleChange}
-                    />
-                    <input
-                        type="text"
-                        name="descr"
-                        placeholder="Title"
-                        value={descr}
-                        onChange={this.handleChange}
-                    />
-                <button>Add to list</button>
-            </form>
-        );
+    if(
+      (title.trim() === '')||
+      (imageLink.trim() === '')||
+      (author.trim() === '')||
+      (descr.trim() === '')
+    ) {
+      alert('Заполните все поля!');
+      return false;
+    }
+    else return true;
+  };
+
+  handleChange = e => {
+
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+    };
+
+  render(){
+
+    const {title, imageLink, author, descr} = this.state;
+
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <input
+          type="text"
+          name="title"
+          placeholder="Title"
+          value={title}
+          onChange={this.handleChange}
+        />
+        <input
+          type="text"
+          name="imageLink"
+          placeholder="Image Link"
+          value={imageLink}
+          onChange={this.handleChange}
+        />
+        <input
+          type="text"
+          name="author"
+          placeholder="Author"
+          value={author}
+          onChange={this.handleChange}
+        />
+        <textarea
+          name="descr"
+          placeholder="Description"
+          value={descr}
+          onChange={this.handleChange}
+        />
+        <button className={styles.btn}>Add to list</button>
+      </form>
+    );
     }
 }
 
