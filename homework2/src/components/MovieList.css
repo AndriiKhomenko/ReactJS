@@ -1,0 +1,25 @@
+.container{
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.card{
+  list-style-type: none;
+  border: 1px solid #f0f0f0;
+  padding: 5px;
+  width: 200px;
+  margin-bottom: 20px;
+}
+.btn{
+  border: none;
+  outline: none;
+  background: #FEF5B9;
+  width: 100%;
+  height: 30px;
+}
+.btn:hover{
+  background: #FEFE79;
+  cursor: pointer;
+}

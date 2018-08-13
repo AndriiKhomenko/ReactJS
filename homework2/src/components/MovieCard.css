@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+@import url('https://fonts.googleapis.com/css?family=Muli');
+
+.text1{
+  font-family: 'Muli', sans-serif;
+  font-size: 13px;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+}
+.text{
+  font-family: 'Slabo 27px', sans-serif;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+img{
+  height: 300px;
+}
