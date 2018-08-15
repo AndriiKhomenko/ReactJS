@@ -1,13 +1,13 @@
 import {
   FETCH_MOVIES_REQUEST,
   FETCH_MOVIES_SUCCESS,
-  FETCH_MOVIES_FAILURE,
-} from './types';
+  FETCH_MOVIES_FAILURE
+} from "./types";
 
 const initialState = {
   movies: [],
   isLoading: false,
-  error: null,
+  error: null
 };
 export default (state = initialState, { type, payload }) => {
   switch (type) {
@@ -15,21 +15,21 @@ export default (state = initialState, { type, payload }) => {
       return {
         ...state,
         isLoading: true,
-        error: null,
+        error: null
       };
 
     case FETCH_MOVIES_SUCCESS:
       return {
         ...state,
         isLoading: false,
-        movies: payload,
+        movies: payload
       };
 
     case FETCH_MOVIES_FAILURE:
       return {
         ...state,
         error: payload,
-        isLoading: false,
+        isLoading: false
       };
 
     default:
