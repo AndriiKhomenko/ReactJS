@@ -1,7 +1,7 @@
 import {
   FETCH_MOVIES_REQUEST,
   FETCH_MOVIES_SUCCESS,
-  FETCH_MOVIES_FAILURE
+  FETCH_MOVIES_FAILURE,
 } from "./types";
 
 const initialState = {
@@ -22,7 +22,7 @@ export default (state = initialState, { type, payload }) => {
       return {
         ...state,
         isLoading: false,
-        movies: payload
+        movies: payload,
       };
 
     case FETCH_MOVIES_FAILURE:

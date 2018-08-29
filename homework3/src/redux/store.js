@@ -1,10 +1,14 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import moviesReducer from './movie-list/reducer';
+import searchReducer from './search-bar/reducer';
+import favouritesReducer from './watch-list/reducer';
 import thunk from './middlewares/thunk';
 
 const rootReducer = combineReducers({
   movies: moviesReducer,
+  search: searchReducer,
+  favourites: favouritesReducer
 });
 
 const enhancer = composeWithDevTools(applyMiddleware(thunk));

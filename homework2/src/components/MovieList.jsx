@@ -12,7 +12,6 @@ const MovieList = ({films, onClick}) => (
           overview={film.overview}
         />
         <button onClick={() => onClick(film.id)} className={styles.btn}>Add to favourites</button>
-        {/* <Button text="Add to Favourite" onClick={() => onClick(film.id)} /> */}
       </li>
     ))}
   </ul>
