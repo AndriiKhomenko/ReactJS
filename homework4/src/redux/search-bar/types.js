@@ -1,0 +1,1 @@
+export const QUERY = 'FETCH_MOVIES_BY_QUERY';

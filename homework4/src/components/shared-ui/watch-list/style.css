@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+*{
+  margin: 0;
+  padding: 0;
+}
+.container{
+  width: 300px;
+  margin: 10px 0 0 10px;
+  border: 1px solid #f0f0f0;
+}
+.card{
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 10px 5px 5px;
+  padding: 10px;
+  border: 1px solid #f0f0f0;
+}
+.image{
+  width: 90px;
+  height: 140px;
+}
+.data{
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+}
+.data>:nth-child(2){
+  margin: 7px 0;
+}
+.text{
+  font-family: 'PT Sans', sans-serif;
+}
+.text_1{
+  font-family: 'PT Sans', sans-serif;
+  text-align: center;
+  border-bottom: 2px solid black;
+}
+.btndel{
+  background-color: rgb(255, 243, 243);
+  border: 1px solid gray;
+  color: black;
+  padding: 9px 32px;
+  text-align: center;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.btndel:hover {
+  background-color: rgb(255, 176, 176);
+}
