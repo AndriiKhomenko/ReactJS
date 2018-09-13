@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from "react-redux";
 import { fetchMovies } from "../../../redux/movie-list/actions";
 import MovieList from "../movie-list/movie-list";
@@ -15,11 +16,16 @@ class App extends Component {
     return (
         <div className={styles.main}>
           
-            <WatchList />
+            {/* <WatchList /> */}
+            <Switch>
+              <Route exact path="/watchlist" component={WatchList} />
+              <Route exact path="/search" component={SearchBar} />
+              <Redirect to="search"/>
+            </Switch>
             <div className={styles.container_1}>
               <div className={styles.container_2}>
                 <CategorySelector fetchFilms={fetchMovies} />
-                <SearchBar />
+                {/* <SearchBar /> */}
               </div>
               {error && <h1>error</h1>}
               {isLoading && <Spinner />}
